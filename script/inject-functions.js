@@ -11,7 +11,7 @@ var applyFunctionOnInspectedWindow = function(fn, callback) {
 
 var checkMozaicNamespace = function() {
   // window.Mozaic is not created at page load
-  return Boolean(App.general.ENTRY_POINT);
+  return Boolean(Mozaic.general.ENTRY_POINT);
 };
 
 var gatherMozaicData = function() {
@@ -68,7 +68,7 @@ var gatherMozaicData = function() {
             type: data.type
           };
           attributes.channelType =
-            App.DataSourceConfig.channel_types[attributes.type].type;
+            Mozaic.DataSourceConfig.channel_types[attributes.type].type;
           if (attributes.channelType == 'relational') {
             attributes.models = datasource.data[id].length;
           }
